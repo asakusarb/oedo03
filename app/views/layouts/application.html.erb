@@ -8,6 +8,7 @@
 </head>
 <body>
   <header>
+    <div class="centered">
     <nav>
       <ul class="nav">
           <%= content_tag :li, class: ('active' if current_page?(root_path)) do %>
@@ -25,6 +26,7 @@
           <li><a href="http://asakusarb.doorkeeper.jp/events/2737">Register</a></li>
       </ul>
     </nav>
+    </div>
   </header>
 <%= yield %>
 </body>
