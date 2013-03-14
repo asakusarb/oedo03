@@ -299,6 +299,7 @@ div.maintext {
         margin: 0;
         width: 25%;
         border: none;
+        text-align: center;
         @media screen and (max-width: 767px) {
           width: 100%;
         }
@@ -307,7 +308,7 @@ div.maintext {
           margin: 0;
           float: none;
           width: 100%;
-          text-align: left;
+          text-align: center;
         }
         section {
           width: 100%;
@@ -318,6 +319,10 @@ div.maintext {
       ul {
         li {
           display: block;
+          margin-top: 10px;
+          img {
+          border: solid 1px $black;
+          }
         }
       }
     }
