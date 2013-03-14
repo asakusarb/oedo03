@@ -1,0 +1,379 @@
+$white: white;
+$black: #777777;
+$dark-black: black;
+$red: #b41414;
+$blue: #1d2b57;
+$dark-red: #b74473;
+$dark-blue: #577893;
+$light-blue: #dceef7;
+$black-red: #270b0e;
+$site-width: 1050px;
+
+@mixin clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin site-width {
+  width: $site-width;
+  @media screen and (max-width: 767px) {
+    width: 100%;
+  }
+}
+
+@mixin page-title {
+  border-bottom: 3px solid $dark-black;
+  margin: 0.67em 150px;
+  @media screen and (max-width: 767px) {
+    margin: 0;
+    padding: 0 10px;
+  }
+}
+
+.pc {
+  display: inline;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+.mobile {
+  display: none;
+  @media screen and (max-width: 767px) {
+    display: block;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  line-height: 1.5;
+  display: block;
+  background-image: url("bg.png");
+  background-color: $red;
+  color: $black;
+}
+
+a {
+  color: $dark-red;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $dark-blue;
+  text-decoration: underline;
+}
+
+h1, h2 {
+  font-size: 18px;
+  color: $red;
+}
+
+header {
+  height: 37px;
+  background-color: $black-red;
+  border-bottom: $light-blue 3px solid;
+  font-family: "Ubuntu Condensed", sans-serif;
+  nav {
+    @include site-width;
+    margin: 0 auto;
+    @include clearfix;
+    ul {
+      li {
+        float: left;
+        width: 20%;
+        list-style: none;
+        @media screen and (max-width: 797px) {
+          width: 25%;
+        }
+        a {
+          display: block;
+          height: 37px;
+          line-height: 37px;
+          font-size: 24px;
+          text: {
+            align: center;
+          };
+          @media screen and (max-width: 767px) {
+            font-size: 18px;
+          }
+          &:link,
+          &:visited {
+            background: transparent;
+            color: $light-blue;
+            text: {
+              decoration: none;
+            };
+          }
+          &:hover,
+          &:active {
+            background: $blue;
+            color: $light-blue;
+            text: {
+              decoration: none;
+            };
+          }
+        }
+        &.active {
+          background-color: $light-blue;
+          a {
+            color: $black-red;
+            &:hover {
+              color: $light-blue;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  background-color: $black-red;
+  border-top: $light-blue 3px solid;
+  padding: 30px;
+  @include clearfix;
+  @media screen and (max-width: 767px) {
+    padding: 10px 0;
+  }
+  section#contacts {
+    height: 40px;
+    margin: 20px 0;
+    @include clearfix;
+    @media screen and (max-width: 767px) {
+      margin: 10px 0;
+    }
+    ul {
+      font-family: "Ubuntu Condensed", sans-serif;
+      font-size: 18px;
+      list-style: none;
+      color: $light-blue;
+      $li-width: 230px;
+      $li-margin: 40px;
+      width: $li-width * 3 + $li-margin * 3;
+      margin: 0 auto;
+      @include clearfix;
+      @media screen and (max-width: 767px) {
+        text-align: center;
+        width: 100%;
+      }
+      li {
+        float: left;
+        width: $li-width;
+        height: 26px;
+        text-align: center;
+        @media screen and (max-width: 767px) {
+          width: 30%;
+          float: none;
+          display: inline-block;
+        }
+        &:nth-child(2) {
+          margin: 0 $li-margin;
+          @media screen and (max-width: 767px) {
+            margin: 0 1.5%;
+          }
+        }
+        i {
+          margin-right: 5px;
+          margin-left: -10px;
+        }
+        img {
+          vertical-align: middle;
+          margin-left: -10px;
+        }
+        a {
+          color: $light-blue;
+          text-decoration: none;
+          display: block;
+          border: solid 1px $light-blue;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+  section#organized {
+    clear: both;
+    text-align: center;
+    margin: 0 auto;
+    @media screen and (max-width: 767px) {
+      margin: 0 10px;
+    }
+    h2 {
+      color: $dark-blue;
+      margin-bottom: 0.5em;
+    }
+    div.members {
+      width: 26%;
+      text-align: center;
+      margin: 0px auto;
+      @media screen and (max-width: 767px) {
+        width: 100%;
+      }
+    }
+    .organized {
+      width: 50%;
+      font-size: 12px;
+      text-align: left;
+      float: left;
+      h3 {
+        color: $dark-blue;
+        font-size: 14px;
+        margin-bottom: 0px;
+      }
+      p {
+        margin: 0 0 8px;
+      }
+    }
+  }
+}
+
+div.main_img {
+  img {
+    margin: 0 auto;
+    height: auto;
+    width: 100%;
+    @include site-width;
+    display: block;
+    @media screen and (max-width: 767px) {
+      margin: 0 auto;
+    }
+  }
+}
+
+div.maintext {
+  margin: 45px auto 0;
+  padding: 30px 0;
+  @include site-width;
+  background-color: $white;
+  &.about {
+    margin: 0 auto;
+  }
+  @media screen and (max-width: 767px) {
+    padding: 10px 0;
+    margin: 20px auto 0;
+  }
+  h1 {
+    @include page-title;
+  }
+  section {
+    padding: 30px 0;
+    margin: 0 155px;
+    box-orient: horizontal;
+    border-top: solid 3px $light-blue;
+    @include clearfix;
+    @media screen and (max-width: 767px) {
+      margin: 0 !important;
+      padding: 12px 10px;
+    }
+    &.venue {
+      border-top: none;
+      padding: 0;
+      width: 750px;
+      margin: 0 auto;
+      h2 {
+        width: 100%;
+        text-align: left;
+        float: none;
+        margin: 0 0 10px;
+      }
+    }
+    &#speakers {
+      border-top: none;
+      padding: 0;
+      width: 750px;
+      margin: 0 auto;
+      min-height: 600px;
+      @media screen and (max-width: 767px) {
+        width: 100%;
+        border: none;
+      }
+      section {
+        float: left;
+        margin: 0;
+        width: 25%;
+        border: none;
+        @media screen and (max-width: 767px) {
+          width: 100%;
+        }
+        h2 {
+          display: block;
+          margin: 0;
+          float: none;
+          width: 100%;
+          text-align: left;
+        }
+        section {
+          width: 100%;
+          border: none;
+          padding: 10px 0;
+        }
+      }
+      ul {
+        li {
+          display: block;
+        }
+      }
+    }
+    h2 {
+      width: 30%;
+      text-align: right;
+      font-weight: bold;
+      float: left;
+      @media screen and (max-width: 767px) {
+        width: 100%;
+        float: none;
+        text-align: left;
+        font-size: 16px;
+        margin: 0 0 10px;
+      }
+    }
+    p {
+      display: block;
+      width: 60%;
+      line-height: 1.6;
+      float: right;
+      @media screen and (max-width: 767px) {
+        width: 100%;
+        float: none;
+        text-align: left;
+        font-size: 12px;
+      }
+      span.info {
+        letters-spacing: 1px;
+        color: #444444;
+        font-weight: bold;
+        margin-right: 18px;
+      }
+    }
+  }
+}
+
+div.schedule {
+  section {
+    padding: 15px 0;
+    border-top: none;
+    border-bottom: solid 1px $light-blue;
+    font-size: 14px;
+    @media screen and (max-width: 767px) {
+      padding: 10px 10px;
+    }
+    h3 {
+      margin-top: 3px;
+      font-size: 14px;
+      display: block;
+      width: 30%;
+      float: left;
+    }
+    p {
+      width: 68%;
+      float: right;
+    }
+  }
+}
