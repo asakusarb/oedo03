@@ -284,7 +284,7 @@ div.maintext {
         margin: 0 0 10px;
       }
     }
-    &.speakers {
+    &#speakers {
       border-top: none;
       padding: 0;
       width: 750px;
@@ -292,37 +292,32 @@ div.maintext {
       min-height: 600px;
       @media screen and (max-width: 767px) {
         width: 100%;
+        border: none;
       }
-      h1 {
-        width: 100%;
-        text-align: left;
-        float: none;
-        margin: 0 0 20px;
+      section {
+        float: left;
+        margin: 0;
+        width: 25%;
+        border: none;
+        @media screen and (max-width: 767px) {
+          width: 100%;
+        }
+        h2 {
+          display: block;
+          margin: 0;
+          float: none;
+          width: 100%;
+          text-align: left;
+        }
+        section {
+          width: 100%;
+          border: none;
+          padding: 10px 0;
+        }
       }
       ul {
         li {
           display: block;
-          width: 21%;
-          float: left;
-          margin: 0 2%;
-          height: 200px;
-          @media screen and (max-width: 767px) {
-            width: 46%;
-          }
-          img {
-            display: block;
-            margin: 0 auto 8px;
-          }
-          .name {
-            display: block;
-            text-align: center;
-            font-size: 14px;
-            margin: 0 0 8px;
-          }
-          p {
-            font-size: 12px;
-            width: 100%;
-          }
         }
       }
     }
