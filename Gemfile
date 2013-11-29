@@ -1,8 +1,7 @@
-source :rubygems
+source 'https://rubygems.org'
 
-gem 'rails'
+gem 'rails', '~> 3.2'
 gem 'pg'
-
 
 group :assets do
   gem 'sass-rails'
